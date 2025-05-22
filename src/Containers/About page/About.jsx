@@ -23,7 +23,7 @@ function About() {
                             </h2>
                             <div className="about-container">
                                 <div className="about-image">
-                                    <img src={`${import.meta.env.VITE_API_URL_LOCALHOST}${allItems.myimage}`} alt="Item" />
+                                    <img src={`${import.meta.env.VITE_API_URL_MAINURL}${allItems.myimage}`} alt="Item" />
 
                                 </div>
                                 <div className="about-content">

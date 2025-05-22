@@ -21,7 +21,7 @@ function Myproject() {
                 {project.map((item, index) => (
                     <>
                         <div key={index} className="images">
-                           <img src={`${import.meta.env.VITE_API_URL_LOCALHOST}${item.projectimages}`} />
+                           <img src={`${import.meta.env.VITE_API_URL_MAINURL}${item.projectimages}`} />
                         </div>
                     </>
                 ))}
