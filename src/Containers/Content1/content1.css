@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.profilebox {
+    width: 100%;
+    min-height: 60vh;
+    background-color: #0e0d0d; /* dark background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+    /* border: 2px solid red; */
+}
+
+/* Profile image styling */
+.profilebox img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+}
+
+/* Headline text */
+.profilebox h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Colored name styling */
+.profilebox .name {
+    background: linear-gradient(90deg, #c800ff, #ff7700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Subheadline */
+.profilebox h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+/* Description */
+.profilebox p {
+    font-size: 1rem;
+    max-width: 600px;
+    color: #e0e0e0;
+}
