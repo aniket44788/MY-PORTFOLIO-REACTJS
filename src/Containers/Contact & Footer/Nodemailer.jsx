@@ -7,35 +7,38 @@ import { TfiEmail } from "react-icons/tfi";
 import "./nodemailer.css"
 import { useState } from 'react';
 function Nodemailer() {
-    const [message, setMessage] = useState("")
     const [mail, setMail] = useState({
-        name: "",
-        email: "",
-        msg: "",
-    });
+    name: "",
+    email: "",
+    sub: "", // ✅ Add subject field, since backend expects 'sub'
+    msg: "",
+});
 
-    const mailChange = (e) => {
+const mailChange = (e) => {
+    setMail({
+        ...mail,
+        [e.target.name]: e.target.value,
+    });
+};
+
+const submitmail = async (e) => {
+    e.preventDefault();
+    try {
+        const response = await axios.post(import.meta.env.VITE_API_URL_NODEMAILER, mail);
+        alert("Message sent successfully!");
         setMail({
-            ...mail,
-            [e.target.name]: e.target.value
-        })
+            name: "",
+            email: "",
+            sub: "", // ✅ Clear subject too
+            msg: "",
+        });
+        console.log(response);
+    } catch (error) {
+        console.error("Failed to send Email", error);
+        setMessage("Failed to send Mail");
     }
-    const submitmail = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post(import.meta.env.VITE_API_URL_NODEMAILER, mail);
-            alert("Message sent successfully!");
-            setMail({
-                name: "",
-                email: "",
-                msg: ""
-            })
-            console.log(response)
-        } catch (error) {
-            console.log(error, "Failed to send Email");
-            setMessage("Failed to send Mail")
-        }
-    }
+};
+
     return (
         <>
             <div className="main-div">
