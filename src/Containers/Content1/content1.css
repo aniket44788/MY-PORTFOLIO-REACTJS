@@ -5,7 +5,7 @@
 }
 .profilebox {
     width: 100%;
-    min-height: 72vh;
+    min-height: 52vh;
     background-color: #0e0d0d; /* dark background */
     display: flex;
     align-items: center;
