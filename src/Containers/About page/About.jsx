@@ -1,16 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import "./about.css"
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import "./about.css";
+import axios from "axios";
 function About() {
     const [aboutpage, setaboutpage] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            const fetchApi = await axios.get(import.meta.env.VITE_API_URL_ABOUTPAGE)
-            setaboutpage(fetchApi.data.result)
-            // console.log(fetchApi.data)
-        }
-        fetchData()
-    }, [])
+            try {
+                const fetchApi = await axios.get(import.meta.env.VITE_API_URL_ABOUTPAGE);
+                setaboutpage(fetchApi.data.result);
+            } catch (error) {
+                console.error("Error fetching about page data:", error);
+            }
+        };
+        fetchData();
+    }, []);
+    console.log(aboutpage)
+
     return (
         <>
             {aboutpage.map((allItems, index) => {
@@ -23,13 +28,11 @@ function About() {
                             </h2>
                             <div className="about-container">
                                 <div className="about-image">
-                                    <img src={`${import.meta.env.VITE_API_URL_MAINURL}${allItems.myimage}`} alt="Item" />
-
+                                    <img src={`${import.meta.env.VITE_API_URL_MAINURL}${allItems.myimage}`} />
+                                    {/* <img src={`http://localhost:3001/${allItems.myimage}`} alt={allItems.myimage}/> */}
                                 </div>
                                 <div className="about-content">
-                                    <p>
-                                        {allItems.about}
-                                    </p>
+                                    <p>{allItems.about}</p>
                                     <div className="skills">
                                         <div className="skill">
                                             <span>HTML & CSS</span>
@@ -55,22 +58,15 @@ function About() {
                                                 <div className="fill expressjs"></div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
                         </section>
                     </>
-
-                )
+                );
             })}
-
-
-
-
-
         </>
-    )
+    );
 }
 
-export default About
+export default About;
