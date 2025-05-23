@@ -18,7 +18,7 @@ function Content1() {
                 return (
                     <>
                         <div class="profilebox">
-                            <img src={`${import.meta.env.VITE_API_URL_MAINURL}${item.profile}`} alt={item.profile} />
+                            <img src={`${import.meta.env.VITE_API_URL_MAINURL}${item.profile.replace(/\\/g, "/")}`} alt={item.profile} />
                             <h1>I'm <span class="name">{item.name}</span></h1>
                             <p>
                                 {item.description}
