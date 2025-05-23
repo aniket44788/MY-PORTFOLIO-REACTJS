@@ -32,7 +32,7 @@ function Nodemailer() {
             })
             console.log(response)
         } catch (error) {
-            console.log(error , "Failed to send Email");
+            console.log(error, "Failed to send Email");
             setMessage("Failed to send Mail")
         }
     }
@@ -69,16 +69,24 @@ function Nodemailer() {
                     <div className="form-box">
                         <form onSubmit={submitmail}>
                             <label> Your Name</label>
-                            <input value={mail.name} name='name' onChange={mailChange}  required placeholder='Enter your name' type="text" /> <br />
+                            <input value={mail.name} name='name' onChange={mailChange} required placeholder='Enter your name' type="text" /> <br />
 
                             <label > Your Email</label>
-                            <input value={mail.email} name='email' onChange={mailChange}  placeholder='Enter your email' required type="email" /> <br />
+                            <input value={mail.email} name='email' onChange={mailChange} placeholder='Enter your email' required type="email" /> <br />
 
                             <label>Write your message here </label>
-                            <input value={mail.msg} name='msg' onChange={mailChange} placeholder='Drop your message ' required type="text" /> <br />
+                            <textarea
+                                value={mail.msg}
+                                name="msg"
+                                onChange={mailChange}
+                                rows="6"
+                                placeholder="Drop your message"
+                                required
+                            />
+
 
                             <button type='Submit'> Submit </button>
-                        </form> 
+                        </form>
                     </div>
                 </div>
             </div>

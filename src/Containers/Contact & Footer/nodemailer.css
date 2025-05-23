@@ -92,13 +92,6 @@
 
 
 .form-box {
-    /* width: 400px; */
-    /* margin: 50px auto; */
-    /* padding: 30px; */
-    /* border: 1px solid #ccc; */
-    /* border-radius: 10px; */
-    /* background-color: #f9f9f9; */
-    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); */
     font-family: Arial, sans-serif;
 }
 
@@ -122,6 +115,19 @@
     background-color: #32323c;
     color: white;
 }
+.form-box textarea {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #2f2f3a;
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  min-height: 150px; /* Adjust this value as needed */
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 
 .form-box button {
     width: 100px;

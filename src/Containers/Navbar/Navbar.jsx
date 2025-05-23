@@ -16,16 +16,22 @@ function Navbar() {
 
       <div className="hamburger" onClick={toggleMenu}>
         ☰
-      </div>  
+      </div>
       <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Me</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Contact</a><span className="nav-underline" /></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Project</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <button className="connect-btn">Connect With Me</button>
+      <button
+        className="connect-btn"
+        onClick={() => document.getElementById("contact").scrollIntoView({ behavior: 'smooth' })}
+      >
+        Connect With Me
+      </button>
+
     </nav>
   );
 }

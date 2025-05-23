@@ -29,12 +29,6 @@ function About() {
                             <div className="about-container">
                                 <div className="about-image">
                                     <img src={`${import.meta.env.VITE_API_URL_MAINURL}${allItems.myimage.replace(/\\/g, "/")}`} />
-                                    {/* <img src={`http://localhost:3001/${allItems.myimage}`} alt={allItems.myimage}/> */}
-                                    {/* <img
-                                        src={`https://my-portfolio-expressjs-1.onrender.com/${allItems.myimage.replace(/\\/g, "/")}`}
-                                        alt="About"
-                                        style={{ width: "300px", height: "auto" }}
-                                    /> */}
                                 </div>
                                 <div className="about-content">
                                     <p>{allItems.about}</p>
