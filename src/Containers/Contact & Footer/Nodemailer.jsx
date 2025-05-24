@@ -29,7 +29,7 @@ const submitmail = async (e) => {
         setMail({
             name: "",
             email: "",
-            sub: "", // ✅ Clear subject too
+            sub: "", // 
             msg: "",
         });
         console.log(response);
