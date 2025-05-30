@@ -12,8 +12,18 @@ function Content1() {
         }
         fetchData()
     }, [])
+
+    const handleDownload = () => {
+        const link = document.createElement("a");
+        link.href = "/resume.pdf"
+        link.download = "resume.pdf";
+        link.click();
+    };
+
+
     return (
         <>
+
             {contentpage.map((item, index) => {
                 return (
                     <>
@@ -23,12 +33,20 @@ function Content1() {
                             <p>
                                 {item.description}
                             </p>
+                            <br />
+                            <br />
+                            <div className="p-4">
+                                <button onClick={handleDownload} class="button">
+                                    <span> Download Resume </span>
+                                </button>
+
+                            </div>
+
                         </div>
 
                     </>
                 )
             })}
-
         </>
     )
 }
