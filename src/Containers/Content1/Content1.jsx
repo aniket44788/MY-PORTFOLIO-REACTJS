@@ -12,15 +12,12 @@ function Content1() {
         }
         fetchData()
     }, [])
-
     const handleDownload = () => {
         const link = document.createElement("a");
         link.href = "/resume.pdf"
         link.download = "resume.pdf";
         link.click();
     };
-
-
     return (
         <>
 

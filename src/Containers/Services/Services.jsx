@@ -26,7 +26,6 @@ function Services() {
                 <span className="gradient-text">{item.title}</span>
               </h3>
               <p>{item.description}</p>
-              
             </div>
           </>
         ))}
